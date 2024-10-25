@@ -1,0 +1,96 @@
+/* Container styling */
+.wishlist-container {
+    padding: 2rem;
+    background-color: #f8f9fa;
+  }
+  
+  h2.text-center {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Card Styling */
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #f1f1f1;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+    background-color: #fff;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  
+  /* Button Styling */
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    transform: scale(1);
+  }
+  
+  button.btn-primary {
+    background-color: #f43397;
+    border-color: #f43397;
+    color: #fff;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #d9217f;
+  }
+  
+  button.btn-danger {
+    background-color: #ff5722;
+    border-color: #ff5722;
+    color: #fff;
+  }
+  
+  button.btn-danger:hover {
+    background-color: #e64a19;
+  }
+  
+  /* Responsive Card Columns */
+  @media (max-width: 768px) {
+    .row-cols-md-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .row-cols-md-4 {
+      grid-template-columns: 1fr;
+    }
+  }
+  

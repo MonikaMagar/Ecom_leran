@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'; // Import useState
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Store } from './store';
+import Navigation from './Components/Navigation';
+import Home from './Components/Home';
+import Cart from './Components/Cart';
+import Footer from './Components/Footer';
+import Wishlist from './Components/Wishlist';
+
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState(""); // State for search term
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Store>
+        <BrowserRouter>
+          <Navigation searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <Routes>
+            <Route path='/' element={<Home searchTerm={searchTerm} />} />
+            <Route path='/cart' element={<Cart />} />
+           <Route path='/wishlist' element={<Wishlist/>}/>
+            
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </Store>
     </div>
   );
 }
